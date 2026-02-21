@@ -70,7 +70,7 @@ Este projeto é uma ferramenta poderosa de **Sumarização de Vídeos** que une 
     title="Groq & Llama" 
     width="30px" 
     style="padding-right: 10px;" 
-    src="https://skillicons.dev/icons?i=ai](https://upload.wikimedia.org/wikipedia/commons/c/cc/Groq_logo.svg" 
+    src="https://skillicons.dev/icons?i=ai" 
 />
 <img 
     align="left" 
