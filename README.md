@@ -24,7 +24,22 @@ Este projeto é uma ferramenta poderosa de **Sumarização de Vídeos** que une 
 </p>
 
 ### 🛠 Tecnologias e Ferramentas
-
+<img 
+    align="left" 
+    alt="HTML5"
+    title="HTML5" 
+    width="30px" 
+    style="padding-right: 10px;" 
+    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+/>
+<img 
+    align="left" 
+    alt="CSS3"
+    title="CSS3" 
+    width="30px" 
+    style="padding-right: 10px;" 
+    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" 
+/>
 <img 
     align="left" 
     alt="Python"
@@ -39,7 +54,7 @@ Este projeto é uma ferramenta poderosa de **Sumarização de Vídeos** que une 
     title="Flask" 
     width="30px" 
     style="padding-right: 10px;" 
-    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg" 
+    src="https://raw.githubusercontent.com/tandpfun/skill-icons/65dea6c4eaca7da319e552c09f4cf5a9a8dab2c8/icons/Flask-Dark.svg" 
 />
 <img 
     align="left" 
@@ -47,7 +62,7 @@ Este projeto é uma ferramenta poderosa de **Sumarização de Vídeos** que une 
     title="Whisper (OpenAI)" 
     width="30px" 
     style="padding-right: 10px;" 
-    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/openai/openai-original.svg" 
+    src="https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg"
 />
 <img 
     align="left" 
@@ -55,7 +70,7 @@ Este projeto é uma ferramenta poderosa de **Sumarização de Vídeos** que une 
     title="Groq & Llama" 
     width="30px" 
     style="padding-right: 10px;" 
-    src="https://skillicons.dev/icons?i=ai" 
+    src="https://skillicons.dev/icons?i=ai](https://upload.wikimedia.org/wikipedia/commons/c/cc/Groq_logo.svg" 
 />
 <img 
     align="left" 
