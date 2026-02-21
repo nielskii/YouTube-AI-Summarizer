@@ -1,0 +1,7 @@
+# Pastas de ambiente e configuração
+__pycache__/
+.vscode/
+venv/
+
+# Arquivos de teste
+teste.py

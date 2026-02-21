@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sumo — AI Video Summaries</title>
+  <link href="https://fonts.googleapis.com" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(180deg, #2f3136, #1b1c1f);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #eaeaea;
+    }
+
+    .app {
+      width: 100%;
+      min-height: 100vh;
+      background: rgba(20, 21, 24, 0.9);
+      padding: 28px 32px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 36px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #4da3ff, #8b5cf6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+    }
+
+    .logo-text {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .tagline {
+      font-size: 13px;
+      color: #9ca3af;
+    }
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+
+    /* --- CORREÇÃO DO FORMULÁRIO --- */
+    .summarizer-form {
+      width: 100%;
+      max-width: 650px;
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .url-input {
+      flex: 1; /* Faz o input crescer */
+      padding: 14px 18px;
+      border-radius: 999px;
+      border: 1px solid #2d2f36;
+      background: #16171a;
+      color: #fff;
+      outline: none;
+      min-width: 200px;
+    }
+
+    .url-input::placeholder {
+      color: #6b7280;
+    }
+
+    .cta-button {
+      white-space: nowrap; /* Impede o texto do botão de quebrar */
+      padding: 14px 28px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 500;
+      color: #fff;
+      background: linear-gradient(135deg, #4da3ff, #8b5cf6);
+      box-shadow: 0 8px 24px rgba(99, 102, 241, 0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(99, 102, 241, 0.5);
+    }
+
+    /* Responsivo para telas menores */
+    @media (max-width: 580px) {
+      .summarizer-form {
+        flex-direction: column;
+      }
+      .url-input, .cta-button {
+        width: 100%;
+      }
+    }
+    /* ------------------------------ */
+
+    .subtitle {
+      font-size: 14px;
+      color: #9ca3af;
+      margin-top: -10px;
+    }
+
+    .summary-card {
+      width: 100%;
+      max-width: 800px;
+      background: linear-gradient(180deg, #1f2024, #18191c);
+      border-radius: 16px;
+      padding: 20px 22px;
+      color: #d1d5db;
+      position: relative;
+    }
+
+    .summary-card h3 {
+      font-size: 15px;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .summary-card p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #bfc3cc;
+    }
+
+    .actions {
+      position: absolute;
+      right: 16px;
+      bottom: 14px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .actions button {
+      background: none;
+      border: none;
+      color: #9ca3af;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .actions button:hover {
+      color: #fff;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 28px;
+      font-size: 13px;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+{% block content %}
+  <div class="app">
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">S</span>
+        <span class="logo-text">Sumo</span>
+      </div>
+      <span class="tagline">AI-powered video summaries.</span>
+    </header>
+
+    <main class="main">
+      <!-- Form agora alinhado horizontalmente -->
+      <form action="/summarize" method="GET" class="summarizer-form">
+        <input 
+          type="text" 
+          name="url_video" 
+          class="url-input" 
+          placeholder="Paste YouTube video URL..." 
+          required 
+        />
+        <button type="submit" class="cta-button">Summarize Video</button>
+      </form>
+
+      <p class="subtitle">Turn videos into knowledge.</p>
+
+      <section class="summary-card">
+        <h3>Full Summary</h3>
+        <p >
+          {{resumo_ia}}
+        </p>
+
+        <div class="actions">
+          <button title="Refresh">⟳</button>
+          <button title="Download">⭳</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      From video to summary in seconds.
+    </footer>
+  </div>
+{% endblock %}
+</body>
+</html>
